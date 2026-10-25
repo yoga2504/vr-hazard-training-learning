@@ -1,0 +1,22 @@
+# XR (VR Pipeline)
+
+**Status:** In Progress
+
+## What I'm learning
+- Setting up Unity for Meta Quest VR.
+- Using XR Interaction Toolkit to interact with objects.
+- Importing 3D models from Blender into Unity.
+- Testing VR scenes in a headset or simulator.
+
+## Resources
+- Unity Learn: https://learn.unity.com/
+- XR Interaction Toolkit: https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@latest
+- Meta Quest Developer: https://developers.meta.com/horizon/
+
+## Next steps
+1. Set up a VR project in Unity.
+2. Add basic object interaction.
+3. Test the scene in a VR headset or simulator.
+
+## Progress
+No VR build yet. This folder will contain screenshots, notes, and practice work as I progress.
