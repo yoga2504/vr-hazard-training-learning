@@ -1,0 +1,377 @@
+# Unity
+
+**Status:** In Progress
+
+## What I've learned
+
+Object-oriented programming (OOP) in C# for Unity, including:
+
+- **Classes and Objects** – Creating classes and instances to represent objects in a Unity project.
+- **Inheritance** – Reusing and extending functionality from parent classes.
+- **Encapsulation** – Controlling access to data using `private` and `public` members.
+- **Variables and Data Types** – Storing information using types such as `int`, `float`, `string`, and `bool`.
+- **Methods** – Defining actions that a script can perform.
+- **Constructors** – Understanding how objects are initialised in C#.
+- **Properties** – Controlling how data is accessed and modified.
+- **Conditional Statements** – Using `if`, `else if`, and `else` to make decisions.
+- **Loops** – Using `for` and `while` to repeat operations.
+- **Arrays and Lists** – Storing and managing collections of objects.
+- **Polymorphism** – Allowing different classes to implement shared behaviours differently.
+- **Abstraction** – Hiding implementation details and exposing essential functionality.
+- **Unity Components** – Using `MonoBehaviour` to create scripts that interact with GameObjects.
+- **Unity Lifecycle Methods** – Understanding methods such as `Awake()`, `Start()`, and `Update()`.
+- **Debugging** – Using `Debug.Log()` and the Unity Console to test scripts and identify errors.
+
+## Practice Examples
+
+### 1. Classes and Objects
+
+Created a simple class to represent a player and store player information.
+
+```csharp
+using UnityEngine;
+
+public class Player : MonoBehaviour
+{
+    public string playerName = "Player 1";
+    public int health = 100;
+    public float speed = 5f;
+
+    void Start()
+    {
+        Debug.Log(playerName);
+        Debug.Log(health);
+        Debug.Log(speed);
+    }
+}
+```
+
+**Learning outcome:** Understanding how classes contain variables and methods, and how scripts can be attached to GameObjects in Unity.
+
+### 2. Inheritance
+
+Practised extending a base class to create a specialised object.
+
+```csharp
+using UnityEngine;
+
+public class Animal
+{
+    public void Eat()
+    {
+        Debug.Log("The animal is eating.");
+    }
+}
+
+public class Dog : Animal
+{
+    public void Bark()
+    {
+        Debug.Log("The dog is barking.");
+    }
+}
+```
+
+**Learning outcome:** Understanding how a derived class can reuse methods from a base class.
+
+### 3. Encapsulation
+
+Practised protecting data using private variables and public methods.
+
+```csharp
+using UnityEngine;
+
+public class PlayerHealth : MonoBehaviour
+{
+    private int health = 100;
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        health = Mathf.Max(health, 0);
+
+        Debug.Log("Health: " + health);
+    }
+
+    public int GetHealth()
+    {
+        return health;
+    }
+}
+```
+
+**Learning outcome:** Learning how to protect data and control how other scripts access or modify it.
+
+### 4. Variables and Data Types
+
+Practised declaring variables to store different types of information.
+
+```csharp
+using UnityEngine;
+
+public class VariablePractice : MonoBehaviour
+{
+    public string playerName = "Alex";
+    public int score = 10;
+    public float speed = 4.5f;
+    public bool isAlive = true;
+
+    void Start()
+    {
+        Debug.Log(playerName);
+        Debug.Log(score);
+        Debug.Log(speed);
+        Debug.Log(isAlive);
+    }
+}
+```
+
+**Learning outcome:** Understanding how different data types store information in C#.
+
+### 5. Methods
+
+Practised creating methods to perform specific actions.
+
+```csharp
+using UnityEngine;
+
+public class MethodPractice : MonoBehaviour
+{
+    void Start()
+    {
+        SayHello();
+        AddNumbers(5, 10);
+    }
+
+    void SayHello()
+    {
+        Debug.Log("Hello, Unity!");
+    }
+
+    void AddNumbers(int a, int b)
+    {
+        Debug.Log(a + b);
+    }
+}
+```
+
+**Learning outcome:** Understanding how methods organise code into reusable actions and accept parameters.
+
+### 6. Conditional Statements
+
+Practised making decisions using `if` and `else`.
+
+```csharp
+using UnityEngine;
+
+public class ConditionPractice : MonoBehaviour
+{
+    public int score = 75;
+
+    void Start()
+    {
+        if (score >= 50)
+        {
+            Debug.Log("You passed!");
+        }
+        else
+        {
+            Debug.Log("Try again!");
+        }
+    }
+}
+```
+
+**Learning outcome:** Using conditions to control program behaviour based on different values.
+
+### 7. Loops
+
+Practised repeating an operation using a `for` loop.
+
+```csharp
+using UnityEngine;
+
+public class LoopPractice : MonoBehaviour
+{
+    void Start()
+    {
+        for (int i = 1; i <= 5; i++)
+        {
+            Debug.Log("Number: " + i);
+        }
+    }
+}
+```
+
+**Learning outcome:** Understanding how loops reduce repeated code and execute instructions multiple times.
+
+### 8. Arrays and Lists
+
+Practised storing multiple values in a collection.
+
+```csharp
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CollectionPractice : MonoBehaviour
+{
+    public List<string> hazards = new List<string>
+    {
+        "Wet Floor",
+        "Blocked Exit",
+        "Exposed Cable"
+    };
+
+    void Start()
+    {
+        foreach (string hazard in hazards)
+        {
+            Debug.Log(hazard);
+        }
+    }
+}
+```
+
+**Learning outcome:** Learning how collections can store and process multiple items, such as hazards in a simulation.
+
+### 9. Polymorphism
+
+Practised overriding a method to provide different behaviours.
+
+```csharp
+using UnityEngine;
+
+public class Vehicle
+{
+    public virtual void Move()
+    {
+        Debug.Log("The vehicle is moving.");
+    }
+}
+
+public class Car : Vehicle
+{
+    public override void Move()
+    {
+        Debug.Log("The car is driving.");
+    }
+}
+```
+
+**Learning outcome:** Understanding how derived classes can provide specialised implementations of inherited methods.
+
+### 10. Abstraction
+
+Practised defining a common structure using an abstract class.
+
+```csharp
+using UnityEngine;
+
+public abstract class Hazard
+{
+    public abstract void Identify();
+}
+
+public class WetFloor : Hazard
+{
+    public override void Identify()
+    {
+        Debug.Log("Wet floor hazard identified.");
+    }
+}
+```
+
+**Learning outcome:** Understanding how abstract classes define behaviours that derived classes must implement.
+
+### 11. Unity Lifecycle Methods
+
+Practised using Unity's lifecycle methods to execute code at different stages.
+
+```csharp
+using UnityEngine;
+
+public class LifecyclePractice : MonoBehaviour
+{
+    void Awake()
+    {
+        Debug.Log("Awake: Initialising the object.");
+    }
+
+    void Start()
+    {
+        Debug.Log("Start: Beginning the behaviour.");
+    }
+
+    void Update()
+    {
+        // Runs once per frame.
+    }
+}
+```
+
+**Learning outcome:** Understanding when Unity executes common lifecycle methods.
+
+### 12. Debugging
+
+Practised displaying messages in the Unity Console to check program behaviour.
+
+```csharp
+using UnityEngine;
+
+public class DebugPractice : MonoBehaviour
+{
+    void Start()
+    {
+        int number = 10;
+
+        Debug.Log("Program started.");
+        Debug.Log("Number: " + number);
+
+        if (number > 5)
+        {
+            Debug.Log("The number is greater than five.");
+        }
+    }
+}
+```
+
+**Learning outcome:** Using console messages to trace execution and verify values while developing scripts.
+
+## Learning Resource
+
+- **Unity Learn:** https://learn.unity.com/
+- **Microsoft C# Guide:** https://learn.microsoft.com/en-us/dotnet/csharp/
+- **Unity Scripting API:** https://docs.unity3d.com/ScriptReference/
+
+*Specific course or tutorial completed: To be added.*
+
+## Files
+
+Practice scripts to create, organise, and upload:
+
+- `Player.cs` – Practise classes, variables, and objects.
+- `PlayerHealth.cs` – Practise encapsulation and methods.
+- `VariablePractice.cs` – Practise variables and data types.
+- `MethodPractice.cs` – Practise methods and parameters.
+- `ConditionPractice.cs` – Practise conditional statements.
+- `LoopPractice.cs` – Practise loops.
+- `CollectionPractice.cs` – Practise lists and collections.
+- `LifecyclePractice.cs` – Practise Unity lifecycle methods.
+- `DebugPractice.cs` – Practise debugging with console messages.
+
+*Note: These are suggested practice files; update this list to match the scripts actually created and saved in your Unity project.*
+
+## Next
+
+- Import my Blender hallway scene into Unity.
+- Set up the hallway environment and colliders.
+- Create a `Hazard.cs` script to represent different hazards.
+- Develop a hazard identification system.
+- Create decision prompts using Unity UI.
+- Provide feedback for correct and incorrect answers.
+- Test and debug the scripts in the Unity Editor.
+- Update this README as new concepts and features are completed.
+
+## Goal
+
+Apply C# programming and object-oriented programming concepts to develop an interactive Unity safety simulation where users can identify hazards and make appropriate safety decisions.
