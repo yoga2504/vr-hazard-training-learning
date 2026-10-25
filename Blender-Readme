@@ -1,0 +1,28 @@
+# Blender: Donut and Coffee Tutorial
+
+**Status:** Completed
+
+
+![Donut render](donut-render.png)
+
+## Files
+| File | Description |
+|------|-------------|
+| `donutcoffee.blend` | Final Blender project |
+| `donut-render.png` | Final rendered image |
+
+## What I practised
+- **Modelling:** [e.g. extrude, loop cuts, scaling, proportional editing]
+- **Modifiers:** [e.g. Subdivision Surface for smooth shapes]
+- **Materials:** [e.g. colours, roughness, icing and donut shaders]
+- **Lighting and camera:** [e.g. positioning lights and the camera]
+- **Rendering:** [e.g. Eevee or Cycles, resolution, saving the image]
+- **Export one as `.fbx` and import it into Unity
+
+## How this connects to my goal
+Hazard objects for the VR scene (a rug, a spill, a cup on the floor)
+will be modelled in Blender. The coffee/cup part of this tutorial is
+the closest practice to that.
+
+## Next steps
+-  Model 2-3 simple low-poly hazard objects
